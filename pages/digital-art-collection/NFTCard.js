@@ -2,7 +2,7 @@ import Image from "next/image"
 import { BiHeart } from 'react-icons/bi'
 
 const style = {
-    wrapper : `relative flex cursor-pointer my-10 mx-15 overflow-hidden
+    wrapper: `relative flex cursor-pointer my-10 mx-15 overflow-hidden
     flex-col rounded-2xl bg-[#303339] shadow-lg transition-all duration-300 
     hover:shadow-2xl`,
     nftImage: ` w-full rounded-t-lg object-cover`,
@@ -20,22 +20,22 @@ const style = {
     likeCounter: `text-xs text-[#8a939b]`,
 }
 
-const NFTCard = ({listing}) => {
-    
+const NFTCard = ({ listing }) => {
+
     return (
         <div className={style.wrapper}>
             <div className={style.imageContainer}>
-                <Image 
-                    className = {style.nftImage}
-                    src = {listing.asset.image}
-                    height = {400}
-                    width = {300}
-                    alt = 'nft'
+                <Image
+                    className={style.nftImage}
+                    src={listing.asset.image}
+                    height={400}
+                    width={300}
+                    alt='nft'
                 />
 
             </div>
 
-            <div className = {style.nftLowerContainer}>
+            <div className={style.nftLowerContainer}>
                 <div className={style.nftInfoContainer}>
                     <div>
                         {listing.asset.collection && (
@@ -44,31 +44,37 @@ const NFTCard = ({listing}) => {
                             </div>
                         )}
 
-                        <div className={style.nftTitle}>
-                            {listing.asset.name}
-                        </div>
+                        {
+                            listing.asset && <div className={style.nftTitle}>
+                                {listing.asset.name}
+                            </div>
+                        }
+
+
                     </div>
                     <div className={style.priceContainer}>
-                            <div className={style.priceTitle}>Buy At</div>
-                            <div className={style.wethImageContainer}>
-                                <Image
-                                    height = {16}
-                                    width = {16}
-                                    src = '/weth-logo.svg'
-                                    alt = 'weth'
-                                />
-                                <div className={style.priceValue}>
-                                    {listing.buyoutCurrencyValuePerToken?.displayValue}
-                                </div>
+                        <div className={style.priceTitle}>Buy At</div>
+                        <div className={style.wethImageContainer}>
+                            <Image
+                                height={16}
+                                width={16}
+                                src='/weth-logo.svg'
+                                alt='weth'
+                            />
+                            <div className={style.priceValue}>
+                                {listing.buyoutCurrencyValuePerToken?.displayValue}
                             </div>
+                        </div>
                     </div>
 
                 </div>
                 <div className={style.likesContainer}>
-                    <BiHeart className= {style.heartIcon} /> 
-                    <div className={style.likeCounter}>
-                        {listing.asset?.stats?.favorites ?? 0}
-                    </div>
+                    <BiHeart className={style.heartIcon} />
+                    {
+                        listing.asset && <div className={style.likeCounter}>
+                            {listing.asset?.stats?.favorites ?? 0}
+                        </div>
+                    }
                 </div>
             </div>
         </div>
