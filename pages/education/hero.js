@@ -1,6 +1,9 @@
 import React from 'react'
 import Slider from '../../components/ImageSlider'
 import Link from 'next/link'
+import Image from 'next/image'
+import { Grid, Row, Col } from 'react-bootstrap'
+
 
 const style = {
     wrapper: `relative`,
@@ -43,10 +46,37 @@ const Hero = () => {
         //         </div>
         //     </div>
         // </div>
-        <div>
-            education works!
+
+        <div >
+            <div className='content-center v-screen place-items-center'>
+                <h1 className='text-3xl text-yellow-400 font-semibold place-items-center'>
+                    Education page
+                </h1>
+            </div>
+
+            <div class="grid grid-cols-3 gap-0  grid place-items-center space-y-10 space-x- 8">
+                <div>
+                    <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                </div>
+                
+                <Image height={200} width={400} src="/a1.jpg" alt='test' />
+                <div class="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
+                <div class="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
+                <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+                <Image height={200} width={400} src="/1.jpg" alt='test' />
+                
+                <div>
+                    <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                </div>
+                <div class="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
+                <div class="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
+                <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+
+
+            </div>
+
         </div>
-    )      
+    )
 }
 
 export default Hero

@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from '../../components/ImageSlider'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const style = {
     wrapper: `relative`,
@@ -21,7 +22,7 @@ const style = {
 
 const Hero = () => {
     return (
-         // <div className={style.wrapper}>
+        // <div className={style.wrapper}>
         //     <div className={style.container}>
         //         <div className={style.contentWrapper}>
         //             <div className={style.copyContainer}>
@@ -44,9 +45,62 @@ const Hero = () => {
         //     </div>
         // </div>
         <div>
-            Real Estate works!
+            <div className='content-center v-screen place-items-center'>
+                <h1 className='text-3xl text-yellow-400 font-semibold place-items-center'>
+                    RealEstate page
+                </h1>
+            </div>
+            <div class="space-y-24">
+                <div class="grid grid-cols-4 gap-4  grid place-items-center space-y-10 ">
+                    <div>
+                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    </div>
+
+                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+                    <div>
+                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    </div>
+
+                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+
+
+                </div>
+                <div class="grid grid-cols-1 gap-4  grid place-items-center space-y-10 ">
+                    <div>
+                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    </div>
+
+                </div>
+                <div class="grid grid-cols-4 gap-4  grid place-items-center space-y-10 ">
+                    <div>
+                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    </div>
+
+                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+                    <div>
+                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    </div>
+
+                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+
+
+                </div>
+                <div class="grid grid-cols-3 gap-4  grid place-items-center space-y-10 ">
+                    <div>
+                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    </div>
+
+                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+                    <div>
+                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    </div>
+
+                </div>
+                <div></div>
+            </div>
+
         </div>
-    )      
+    )
 }
 
 export default Hero
