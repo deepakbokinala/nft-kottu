@@ -20,7 +20,24 @@ const style = {
     buttonIcon: `h-6 w-6`
 }
 
+import { all_elections } from '../service';
+import { useEffect, useState } from 'react';
+
 const NFTSalesInfo = ({price, buyNFT}) => {
+
+    // const [b , setb ] = useState(0);
+    var b =0
+  
+    // useEffect(() => {
+    //   }, [b]);
+
+    function test2(){
+        // setb(1);
+        all_elections().then((res)=>{console.log(res);});
+
+        console.log(b , "buy now");
+    }
+
     console.log(price)
     return(
         <div className={style.wrapper}> 
@@ -49,7 +66,7 @@ const NFTSalesInfo = ({price, buyNFT}) => {
                              onClick = {buyNFT}
                         >
                             <BsCreditCard2FrontFill className={style.buttonIcon}/>
-                            <span className="text-lg font-semibold">Buy Now</span>
+                            <span className="text-lg font-semibold" onClick={test2()} >Buy Now</span>
                         </div>
                         <div className={`${style.button} ${style.offerButton}`}>
                             <BsFillTagFill className={style.buttonIcon} />

@@ -16,6 +16,8 @@ const Listings = () => {
         getListings()
     }, [])
 
+    
+
     const getListings = async () => {
         try {
             const list = await marketplace.getActiveListings()
@@ -33,26 +35,6 @@ const Listings = () => {
                     {listings?.map((listing, index) => (
 
                         <>
-                            <Link href={`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
-                                <a>
-                                <NFTCard listing={listing} />
-                                </a>
-                            </Link>
-                            <Link href={`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
-                                <a>
-                                <NFTCard listing={listing} />
-                                </a>
-                            </Link>
-                            <Link href={`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
-                                <a>
-                                <NFTCard listing={listing} />
-                                </a>
-                            </Link>
-                            <Link href={`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
-                                <a>
-                                <NFTCard listing={listing} />
-                                </a>
-                            </Link>
                             <Link href={`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
                                 <a>
                                 <NFTCard listing={listing} />
