@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useMarketplace } from '@thirdweb-dev/react'
 import NFTCard from './NFTCard'
@@ -9,10 +9,10 @@ const style = {
 }
 
 const Listings = () => {
-    const [listings , setListings] = useState([])
+    const [listings, setListings] = useState([])
     const marketplace = useMarketplace("0xF810646449588A050a4BB313881B67189a65caf6")
-    
-    useEffect(()=> {
+
+    useEffect(() => {
         getListings()
     }, [])
 
@@ -27,20 +27,37 @@ const Listings = () => {
     }
 
     return (
-        <div className= {style.wrapper}>
+        <div className={style.wrapper}>
             {listings.length > 0 ? (
                 <>
-                  {listings?.map((listing, index) => (
-                    <Link href = {`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
-                        <a>
-                            <NFTCard listing = {listing}/>
-                        </a>
-                    </Link>
-                    
-                  ))}
+                    {listings?.map((listing, index) => (
+
+                        <>
+                            <Link href={`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
+                                <a>
+                                <NFTCard listing={listing} />
+                                </a>
+                            </Link>
+                            <Link href={`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
+                                <a>
+                                <NFTCard listing={listing} />
+                                </a>
+                            </Link>
+                            <Link href={`/assets/${listing.assetContractAddress}/${listing.id}`} key={index}>
+                                <a>
+                                <NFTCard listing={listing} />
+                                </a>
+                            </Link>
+                        </>
+
+                        
+
+
+
+                    ))}
                 </>
             ) : (
-                <div className='text-white font-bold'> 
+                <div className='text-white font-bold'>
                     Loading ...
                 </div>
 
