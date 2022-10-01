@@ -23,7 +23,7 @@ const style = {
 const NFTCard = ({listing}) => {
     
     return (
-        <div className={style.wrapper}>
+        /*<div className={style.wrapper}>
             <div className={style.imageContainer}>
                 <Image 
                     className = {style.nftImage}
@@ -71,6 +71,9 @@ const NFTCard = ({listing}) => {
                     </div>
                 </div>
             </div>
+        </div>*/
+        <div>
+        <p>Test</p>
         </div>
     )
 }
