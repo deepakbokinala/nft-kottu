@@ -7,6 +7,8 @@ import Hero from '../components/Hero'
 
 import 'bootstrap/dist/css/bootstrap.css';
 
+import { connect_wallet , all_elections } from "../components/service"
+
 const style = {
   wrapper: ``,
   walletConnectWrapper: `flex flex-col justify-center items-center h-screen w-screen bg-gradient-to-br from-[#2d1459] to-[#bf0863] `,
@@ -17,6 +19,11 @@ const style = {
 const Home = () => {
   const connect = useMetamask()
   const address = useAddress()
+  
+  // connect_wallet();
+
+  
+
   //const disconnect = useDisconnect()
 
   const welcomeUser = (userName, toastHandler = toast) => {

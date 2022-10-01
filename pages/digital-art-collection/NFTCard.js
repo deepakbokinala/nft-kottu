@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { BiHeart } from 'react-icons/bi'
-
+import { useEffect } from "react"
 const style = {
     wrapper: `relative flex cursor-pointer my-10 mx-15 overflow-hidden
     flex-col rounded-2xl bg-[#303339] shadow-lg transition-all duration-300 
@@ -14,6 +14,8 @@ const style = {
     priceContainer: `flex flex-col items-end justify-center space-y-1`,
     priceTitle: `text-xs font-light text-gray-200`,
     priceValue: `text-pink-300`,
+    button: `flex w-[18rem] items-center cursor-pointer justify-center space-x-4 rounded-lg py-2 text-white`,
+    purchaseButton: `justify-center bg-yellow-500 hover:bg-yellow-400`,
     wethImageContainer: `flex items-center justify-end space-x-2`,
     likesContainer: `flex items-center justidy-end space-x-2`,
     heartIcon: `h-3.5 w-3.5 text-red-500 text-xl mr-2`,
@@ -21,6 +23,7 @@ const style = {
 }
 
 const NFTCard = ({ listing }) => {
+
 
     return (
         <div className={style.wrapper}>
@@ -50,6 +53,18 @@ const NFTCard = ({ listing }) => {
                             </div>
                         }
 
+                        <div className={style.likesContainer}>
+                            <BiHeart className={style.heartIcon} />
+                            {
+                                listing.asset && <div className={style.likeCounter}>
+                                    {listing.asset?.stats?.favorites ?? 0}
+                                </div>
+                            }
+
+                        </div>
+
+
+
 
                     </div>
                     <div className={style.priceContainer}>
@@ -64,18 +79,19 @@ const NFTCard = ({ listing }) => {
                             <div className={style.priceValue}>
                                 {listing.buyoutCurrencyValuePerToken?.displayValue}
                             </div>
+
                         </div>
                     </div>
 
                 </div>
                 <div className={style.likesContainer}>
-                    <BiHeart className={style.heartIcon} />
-                    {
-                        listing.asset && <div className={style.likeCounter}>
-                            {listing.asset?.stats?.favorites ?? 0}
-                        </div>
-                    }
+
+                    <div className={`${style.button} ${style.purchaseButton}`} >
+                        <span className="text-lg font-semibold"  >Buy Now</span>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     )
