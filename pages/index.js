@@ -5,6 +5,8 @@ import toast, { Toaster } from 'react-hot-toast'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 const style = {
   wrapper: ``,
   walletConnectWrapper: `flex flex-col justify-center items-center h-screen w-screen bg-gradient-to-br from-[#2d1459] to-[#bf0863] `,

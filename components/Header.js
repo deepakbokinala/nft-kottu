@@ -1,13 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import logo  from '../assets/bunny.png'
+import logo from '../assets/bunny.png'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 import { MdOutlineAccountBalanceWallet } from 'react-icons/md'
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useAddress, useDisconnect } from '@thirdweb-dev/react'
+
+import { DropdownMenu, DropdownToggle, DropdownItem, UncontrolledDropdown } from 'reactstrap'
 
 
 const style = {
@@ -23,17 +25,17 @@ const style = {
 }
 
 
-const Header = () =>{
+const Header = () => {
     const address = useAddress()
     const disconnect = useDisconnect()
     const router = useRouter();
 
-    
+
     return (
         <div className={style.wrapper}>
             <Link href="/">
                 <div className={style.logoContainer}>
-                    <Image src={logo} className="rounded-full" height={50} width={50}/>
+                    <Image src={logo} className="rounded-full" height={50} width={50} />
                     <div className={style.logoText}>NFT Kottu</div>
                 </div>
             </Link>
@@ -47,17 +49,43 @@ const Header = () =>{
                     placeholder="Search for items and collections"
                 />
             </div>
-            
+
             <div className={style.headerItems}>
                 <Link href="/collections">
                     <div className={style.headerItem}>Collections </div>
                 </Link>
                 <Link href="/live-auctions">
-                <div className={style.headerItem}>Live Auctions</div>
+                    <div className={style.headerItem}>Live Auctions</div>
                 </Link>
+
+                <UncontrolledDropdown>
+                    <DropdownToggle
+                        caret
+                        color="dark"
+                    >
+                        Use-Cases
+                    </DropdownToggle>
+                    <DropdownMenu dark>
+
+                        <DropdownItem>
+                            <Link href="/education">
+                                Education
+                            </Link>
+                        </DropdownItem>
+
+                        <DropdownItem>
+                            <Link href="/realEstate">
+                                Real Estate
+                            </Link>
+                        </DropdownItem>
+
+                    </DropdownMenu>
+                </UncontrolledDropdown>
+
+
                 <div className={style.headerItem}>Create</div>
                 <Link href="/about">
-                <div className={style.headerItem}>About Us</div>
+                    <div className={style.headerItem}>About Us</div>
                 </Link>
                 <div className={style.headerIcon}>
                     <CgProfile />
@@ -70,13 +98,13 @@ const Header = () =>{
                         onClick={disconnect}
                         className="text-[#4111d] px-5 py-2 text-[1rem] font-semibold rounded-full bg-yellow-500 hover:bg-yellow-400 "
                         type='button'
-                        
+
                     >
-                    Logout 
+                        Logout
                     </button>
-                </div>            
+                </div>
             </div>
-            
+
         </div>
     )
 }
