@@ -2,7 +2,8 @@ import React from 'react'
 import Slider from '../../components/ImageSlider'
 import Link from 'next/link'
 import Image from 'next/image'
-
+import CurvedArrow from "react-curved-arrow"
+import { useEffect } from 'react'
 const style = {
     wrapper: `relative`,
     container: `before:content-[''] before:bg-red-500 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-aa-1 before:bg-cover before:bg-center before:opacity-30 before:blur`,
@@ -21,6 +22,9 @@ const style = {
 }
 
 const Hero = () => {
+    useEffect(() => {
+        alert('Finished loading');
+      }, []);
     return (
         // <div className={style.wrapper}>
         //     <div className={style.container}>
@@ -52,9 +56,10 @@ const Hero = () => {
             </div>
             <div class="space-y-24">
                 <div class="grid grid-cols-4 gap-4  grid place-items-center space-y-10 ">
-                    <div>
+                    <div className='from'>
                         <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
                     </div>
+                    
 
                     <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
                     <div>
@@ -65,7 +70,8 @@ const Hero = () => {
 
 
                 </div>
-                <div class="grid grid-cols-1 gap-4  grid place-items-center space-y-10 ">
+                <CurvedArrow fromSelector=".from" toSelector=".to" middleY={350} /> 
+                <div class="grid grid-cols-1 gap-4  grid place-items-center space-y-10 " className='to'>
                     <div>
                         <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
                     </div>

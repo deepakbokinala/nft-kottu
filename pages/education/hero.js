@@ -1,10 +1,13 @@
 import React from 'react'
-import Slider from '../../components/ImageSlider'
+
 import Link from 'next/link'
 import Image from 'next/image'
-import { Grid, Row, Col } from 'react-bootstrap'
+// import ReactDOM from "react-dom"; 
+import CurvedArrow from 'react-curved-arrow';
+import {useEffect} from "react";
 
 
+ 
 const style = {
     wrapper: `relative`,
     container: `before:content-[''] before:bg-red-500 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-aa-1 before:bg-cover before:bg-center before:opacity-30 before:blur`,
@@ -21,7 +24,9 @@ const style = {
     name: ``,
     infoIcon: `flex justify-end items-center flex-1 text-[#8a939b] text-3xl font-bold`,
 }
-
+// useEffect(() => {
+//     alert('Finished loading');
+//   }, []);
 const Hero = () => {
     return (
         // <div className={style.wrapper}>
@@ -53,24 +58,31 @@ const Hero = () => {
                     Education page
                 </h1>
             </div>
+            <div className="wrapper">
+                <div className="from" />
+                {/* <CurvedArrow fromSelector=".from" toSelector=".to" middleY={350} /> */}
+                <div className="to" />
+            </div>
 
-            <div class="grid grid-cols-3 gap-0  grid place-items-center space-y-10 space-x- 8">
+            <div class="grid grid-cols-2 gap-0  grid place-items-center space-y-10 space-x- 8">
                 <div>
-                    <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    <Image height={200} width={200} src='/school.png' alt='weth' />
                 </div>
+
+                {/* <Image height={200} width={400} src="/a1.jpg" alt='test' /> */}
+                <div className="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
+                <div className="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
                 
-                <Image height={200} width={400} src="/a1.jpg" alt='test' />
-                <div class="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
-                <div class="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
-                <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
-                <Image height={200} width={400} src="/1.jpg" alt='test' />
                 
-                <div>
-                    <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                <div ><Image height={200} width={400} src='/graduating.png' alt='weth' /></div>
+                {/* <Image height={200} width={400} src="/1.jpg" alt='test' /> */}
+
+                <div className="text-white">
+                    <Image height={200} width={200} src='/nftt.svg' alt='weth' />
                 </div>
-                <div class="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
-                <div class="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
-                <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+                <div className="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
+                <div className="text-white">Lorem ipsum dolor sit amet do, consectetur adipisicing elit, se do eiusmod temp incididunt ut labore ipsum dolor sit.</div>
+                <div><Image height={200} width={300} src='/media.png' alt='weth' /></div>
 
 
             </div>

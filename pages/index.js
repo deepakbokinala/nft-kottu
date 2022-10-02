@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 import { useAddress, useMetamask } from '@thirdweb-dev/react'
-import toast, { Toaster } from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast' 
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 
-import 'bootstrap/dist/css/bootstrap.css';
+// 
 
 import { connect_wallet , all_elections } from "../components/service"
 
