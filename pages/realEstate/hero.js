@@ -22,9 +22,7 @@ const style = {
 }
 
 const Hero = () => {
-    useEffect(() => {
-        alert('Finished loading');
-      }, []);
+
     return (
         // <div className={style.wrapper}>
         //     <div className={style.container}>
@@ -55,39 +53,56 @@ const Hero = () => {
                 </h1>
             </div>
             <div class="space-y-24">
-                <div class="grid grid-cols-4 gap-4  grid place-items-center space-y-10 ">
+            <div class="grid grid-cols-4 gap-4  grid place-items-center space-y-10 ">
                     <div className='from'>
-                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    <Image height={200} width={200} src='/hi.svg' alt='weth' />
+                        
                     </div>
+                    <div><Image height={200} width={200} src='/man.svg' alt='weth' /></div>
                     
 
-                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+                    
                     <div>
-                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                        <Image height={200} width={200} src='/test.svg' alt='weth' />
                     </div>
 
-                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+                    <div><Image height={200} width={200} src='/woman.svg' alt='weth' /></div>
 
 
                 </div>
-                <CurvedArrow fromSelector=".from" toSelector=".to" middleY={350} /> 
-                <div class="grid grid-cols-1 gap-4  grid place-items-center space-y-10 " className='to'>
-                    <div>
-                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
-                    </div>
+                {/* <CurvedArrow fromSelector=".from" toSelector=".to" middleY={350} />  */}
+                <div   class="grid place-items-center">
+                    
+                        <Image height={300} width={2000} src='/tvf.svg' alt='weth' />
+                    
 
                 </div>
-                <div class="grid grid-cols-4 gap-4  grid place-items-center space-y-10 ">
-                    <div>
+                <div   class="grid place-items-center grid-cols">
+                    
                         <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
+                    
+
+                </div>
+                <div   class="grid place-items-center">
+                    
+                        <Image height={300} width={2000} src='/reverse.svg' alt='weth' />
+                    
+
+                </div>
+                <div class="grid grid-cols-4 gap-4  grid place-items-center  ">
+                    <div className='from'>
+                    <Image height={200} width={200} src='/hi.svg' alt='weth' />
+                        
+                    </div>
+                    <div><Image height={200} width={200} src='/man.svg' alt='weth' /></div>
+                    
+
+                    
+                    <div>
+                        <Image height={200} width={200} src='/test.svg' alt='weth' />
                     </div>
 
-                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
-                    <div>
-                        <Image height={200} width={200} src='/weth-logo.svg' alt='weth' />
-                    </div>
-
-                    <div><Image height={200} width={200} src='/weth-logo.svg' alt='weth' /></div>
+                    <div><Image height={200} width={200} src='/woman.svg' alt='weth' /></div>
 
 
                 </div>
